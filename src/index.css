@@ -463,8 +463,7 @@ section {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    filter: blur(10px);
-    filter: saturate(200);
+    filter: blur(10px) saturate(200);
 }
 
 .card:hover::before {
