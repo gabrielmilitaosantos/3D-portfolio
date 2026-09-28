@@ -1,6 +1,7 @@
 import { words } from '../constants';
 import { useTranslation } from '../hooks/useTranslation.ts';
 import Button from '../components/Button.tsx';
+import HeroExperience from '../components/HeroModels/HeroExperience.tsx';
 
 const Hero = () => {
   const { t, language } = useTranslation();
@@ -44,7 +45,7 @@ const Hero = () => {
               {t.hero.subtitle}
             </p>
             <Button
-              className="md:w-80 md:h-16 w-60 h-12"
+              className="w-fit min-w-60 md:min-w-80 h-12 md:h-16"
               id="button"
               text={t.hero.cta}
             />
@@ -52,6 +53,11 @@ const Hero = () => {
         </header>
 
         {/*Right: 3D model*/}
+        <figure>
+          <div className="hero-3d-layout">
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
     </section>
   );
