@@ -2,9 +2,28 @@ import { words } from '../constants';
 import { useTranslation } from '../hooks/useTranslation.ts';
 import Button from '../components/Button.tsx';
 import HeroExperience from '../components/HeroModels/HeroExperience.tsx';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import AnimatedCounter from '../components/AnimatedCounter.tsx';
 
 const Hero = () => {
   const { t, language } = useTranslation();
+  useGSAP(() => {
+    void gsap.fromTo(
+      '.hero-text h1',
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power2.inOut',
+      }
+    );
+  });
 
   return (
     <section id="hero" className="relative overflow-hidden">
@@ -59,6 +78,8 @@ const Hero = () => {
           </div>
         </figure>
       </div>
+
+      <AnimatedCounter />
     </section>
   );
 };

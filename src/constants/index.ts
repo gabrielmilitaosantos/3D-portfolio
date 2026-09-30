@@ -40,3 +40,24 @@ export const words = [
     imgPath: '/images/designs.svg',
   },
 ];
+
+export const counterItems = [
+  {
+    id: 'tech-stack',
+    value: 30,
+    suffix: '+',
+    label: { pt: 'Tecnologias no Stack', en: 'Technologies in Stack' },
+  },
+  {
+    id: 'active-projects',
+    value: 2,
+    suffix: '',
+    label: { pt: 'Projetos com Deploy Ativo', en: 'Projects with Live Deploy' },
+  },
+  {
+    id: 'languages',
+    value: 3,
+    suffix: '',
+    label: { pt: 'Idiomas Falados', en: 'Languages Spoken' },
+  },
+];
