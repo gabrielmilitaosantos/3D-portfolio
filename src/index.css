@@ -167,14 +167,23 @@ section {
       @apply flex xl:flex-row flex-col gap-10 justify-between;
     }
 
+    /*
+      .first-project-wrapper
+      Left out `items-center` on purpose. The default stretch behavior,
+      combined with these percentages, makes both columns end at the same height.
+     */
     .first-project-wrapper {
-      @apply h-full flex flex-col justify-between xl:w-[60%];
+      @apply flex flex-col xl:w-[66.5%];
 
       .image-wrapper {
-        @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+        @apply relative overflow-hidden rounded-2xl aspect-1474/1243
+          xl:flex xl:items-center xl:justify-center xl:p-8;
 
         img {
-          @apply w-full h-full object-cover rounded-xl absolute inset-0;
+          @apply absolute inset-0 w-full h-full object-cover object-top rounded-xl
+            xl:static xl:w-auto xl:h-auto xl:max-w-full xl:max-h-full xl:rounded-2xl
+            xl:shadow-lg xl:shadow-black/10
+            transition-transform duration-700 ease-out group-hover:scale-[1.04];
         }
       }
 
@@ -191,15 +200,24 @@ section {
       }
     }
 
+    /*
+      .project-list-wrapper
+      This is the second column. These percentages combined with the
+      .first-project-wrapper, build the showcase cards.
+    */
     .project-list-wrapper {
-      @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+      @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[32.5%];
 
       .image-wrapper {
-        @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+        @apply relative overflow-hidden rounded-2xl aspect-824/645
+          xl:flex xl:items-center xl:justify-center xl:p-5 2xl:p-6;
       }
 
       img {
-        @apply w-full h-full object-contain rounded-xl;
+        @apply w-full h-full object-contain rounded-xl
+          xl:w-auto xl:h-auto xl:max-w-full xl:max-h-full
+          xl:shadow-lg xl:shadow-black/10
+          transition-transform duration-700 ease-out group-hover:scale-[1.04];
       }
 
       h2 {

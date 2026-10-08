@@ -61,3 +61,45 @@ export const counterItems = [
     label: { pt: 'Idiomas Falados', en: 'Languages Spoken' },
   },
 ];
+
+export const showCaseProjects = [
+  {
+    id: 'skilled',
+    imgPath: '/images/skilled.png',
+    title: {
+      pt: 'Skilled - Registro de Habilidades para Agentes de IA',
+      en: 'Skilled - AI Skills Registry',
+    },
+    description: {
+      pt:
+        'Aplicação full-stack SSR com autenticação OAuth via Clerk, ' +
+        'busca reativa com paginação e sistemas de votos e favoritos - ' +
+        'da modelagem ao deploy em produção.',
+      en:
+        'A full-stack SSR app with OAuth authentication via Clerk, ' +
+        'paginated reactive search, and a voting/favorites system - ' +
+        'built end-to-end and shipped to production.',
+    },
+    liveUrl: 'https://skilled-iota.vercel.app',
+    repoUrl: 'https://github.com/gabrielmilitaosantos/skilled',
+  },
+  {
+    id: 'authentication-system',
+    imgPath: '/images/authentication.webp',
+    title: {
+      pt: 'Sistema de Autenticação',
+      en: 'Authentication System',
+    },
+    liveUrl: 'https://authentication-system-rose.vercel.app',
+    repoUrl: 'https://github.com/gabrielmilitaosantos/authentication-system',
+  },
+  {
+    id: 'food-order',
+    imgPath: '/images/food-order.webp',
+    title: {
+      pt: 'Food Order - Uma Experiência Simples de Pedido de Comida',
+      en: 'Food Order - A Simple Food Ordering Experience',
+    },
+    repoUrl: 'https://github.com/gabrielmilitaosantos/food-order',
+  },
+];
