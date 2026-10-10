@@ -103,3 +103,26 @@ export const showCaseProjects = [
     repoUrl: 'https://github.com/gabrielmilitaosantos/food-order',
   },
 ];
+
+export const navLinks = [
+  {
+    id: 'work',
+    name: { pt: 'Trabalho', en: 'Work' },
+    link: '#work',
+  },
+  {
+    id: 'experience',
+    name: { pt: 'Experiência', en: 'Experience' },
+    link: '#experience',
+  },
+  {
+    id: 'skills',
+    name: { pt: 'Habilidades', en: 'Skills' },
+    link: '#skills',
+  },
+];
+
+export const contactLink = {
+  name: { pt: 'Contato', en: 'Contact' },
+  link: '#contact',
+};
