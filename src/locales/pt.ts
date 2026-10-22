@@ -8,4 +8,10 @@ export const pt = {
     subtitle: 'Olá, sou o Gabriel, desenvolvedor apaixonado por código.',
     cta: 'Ver Meu Trabalho',
   },
+  experience: {
+    title: 'Experiência e Formação',
+    badge: '💼 Minha trajetória',
+    highlights: 'Destaques',
+    takeaway: 'Aprendizado',
+  },
 } satisfies typeof en;
