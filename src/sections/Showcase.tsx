@@ -15,35 +15,40 @@ const Showcase = () => {
   const secondaryRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useGSAP(() => {
-    const projects = [primaryRef.current, ...secondaryRefs.current];
+    const mm = gsap.matchMedia();
 
-    void gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1.5 }
-    );
-
-    projects.forEach((project, index) => {
-      if (!project) return;
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      const projects = [primaryRef.current, ...secondaryRefs.current];
 
       void gsap.fromTo(
-        project,
-        {
-          y: 50,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          delay: 0.3 * (index + 1),
-          scrollTrigger: {
-            trigger: project,
-            start: 'top bottom-=100',
-          },
-        }
+        sectionRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1.5 }
       );
+
+      projects.forEach((project, index) => {
+        if (!project) return;
+
+        void gsap.fromTo(
+          project,
+          {
+            y: 50,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 0.3 * (index + 1),
+            scrollTrigger: {
+              trigger: project,
+              start: 'top bottom-=100',
+            },
+          }
+        );
+      });
     });
+    return () => mm.revert();
   }, []);
 
   return (

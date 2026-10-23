@@ -152,7 +152,7 @@ export const abilities = [
         'com hash bcrypt, além de RBAC e rate limiting nas APIs que construo.',
       en:
         'OAuth 2.0, JWTs in httpOnly cookies, OTP verification and ' +
-        'bcrypt-hashed passwords, plus RABC and rate limiting in the APIs ' +
+        'bcrypt-hashed passwords, plus RBAC and rate limiting in the APIs ' +
         'I build.',
     },
   },
@@ -167,6 +167,120 @@ export const abilities = [
       en:
         'From my degree to a professional backend role and now ' +
         'full-stack: I learn by building projects to try what is new.',
+    },
+  },
+];
+
+export const expCards = [
+  {
+    id: 'independent',
+    logoPath: '/images/independent.png',
+    title: {
+      pt: 'Projetos Independentes e Estudo Contínuo',
+      en: 'Independent Projects & Continuous Study',
+    },
+    date: { pt: '2024 - Presente', en: '2024 - Present' },
+    highlights: {
+      pt: [
+        'Aplicações full-stack publicadas em produção, como o Skilled ' +
+          'e o Sistema de Autenticação.',
+        'API REST pronta para produção, com RBAC, proteção contra DDoS, ' +
+          'rate-limiting e CI/CD.',
+        'Estudo de tecnologias recentes, como React, TanStack Start, NestJS e ' +
+          'Tailwind.',
+      ],
+      en: [
+        'Full-stack applications shipped to production, such as Skilled and ' +
+          'the Authentication System.',
+        'Production-ready REST API with RBAC, DDoS protection, rate limiting ' +
+          'and CI/CD.',
+        'Study of recent technologies, such as React, TanStack Start, NestJS ' +
+          'and Tailwind.',
+      ],
+    },
+    takeaway: {
+      pt:
+        'Sem time nem prazo imposto, aprendi a escolher arquitetura, definir ' +
+        'escopo e levar projetos até o deploy.',
+      en:
+        'With no team and no imposed deadlines, I learned to choose architecture, ' +
+        'define scope and take projects all the way to deploy.',
+    },
+    listLabel: {
+      pt: 'Destaques',
+      en: 'Highlights',
+    },
+  },
+  {
+    id: 'pgfn',
+    logoPath: '/images/logo-pgfn.png',
+    title: {
+      pt: 'Desenvolvedor Backend Júnior',
+      en: 'Junior Backend Developer',
+    },
+    org: {
+      pt: 'Procuradoria-Geral da Fazenda Nacional (PGFN)',
+      en: "Attorney General's Office for the National Treasury (PGFN)",
+    },
+    date: { pt: 'out 2021 - dez 2023', en: 'Oct 2021 - Dec 2023' },
+    listLabel: {
+      pt: 'Responsabilidades',
+      en: 'Responsibilities',
+    },
+    highlights: {
+      pt: [
+        'Automações de web scraping em Node.js para coleta e consolidação de dados.',
+        'Manutenção de sistemas internos e melhorias solicitadas pela diretoria.',
+        'Ferramenta interna de controle de ponto para a equipe de estagiários.',
+      ],
+      en: [
+        'Web scraping automations in Node.js for data collection and consolidation.',
+        'Maintenance of internal systems and improvements requested by management.',
+        'Internal attendance-tracking tool for the intern team.',
+      ],
+    },
+    takeaway: {
+      pt:
+        'Aprendi a manter sistemas em produção e a transformar pedidos da ' +
+        'diretoria em requisitos claros.',
+      en:
+        'I learned to maintain production systems and turn management requests ' +
+        'into clear requirements.',
+    },
+  },
+  {
+    id: 'unip',
+    logoPath: '/images/logo-unip.png',
+    title: {
+      pt: 'Bacharelado em Ciência da Computação',
+      en: "Bachelor's Degree in Computer Science",
+    },
+    org: {
+      pt: 'Universidade Paulista (UNIP)',
+      en: 'Universidade Paulista (UNIP)',
+    },
+    date: { pt: '2020 - 2023', en: '2020 - 2023' },
+    listLabel: {
+      pt: 'Destaques',
+      en: 'Highlights',
+    },
+    highlights: {
+      pt: [
+        'TCC: plataforma web sem fins lucrativos que conectava doadores a ' +
+          'organizações parceiras.',
+      ],
+      en: [
+        'Capstone project: non-profit web platform connecting donors with ' +
+          'partner organizations.',
+      ],
+    },
+    takeaway: {
+      pt:
+        'Conciliei estudo e trabalho como desenvolvedor por mais de dois anos ' +
+        'e conclui a graduação com um projeto de cunho social.',
+      en:
+        'I balanced study and a developer job for over two years and finished ' +
+        'my degree with a socially focused project.',
     },
   },
 ];
