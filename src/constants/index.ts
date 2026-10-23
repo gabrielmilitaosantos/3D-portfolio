@@ -280,7 +280,7 @@ export const expCards = [
         'e conclui a graduação com um projeto de cunho social.',
       en:
         'I balanced study and a developer job for over two years and finished ' +
-        'my degree with a society drive project.',
+        'my degree with a socially focused project.',
     },
   },
 ];
