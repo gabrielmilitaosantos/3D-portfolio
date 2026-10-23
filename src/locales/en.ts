@@ -7,6 +7,12 @@ export const en = {
       "Hi, I'm Gabriel, a developer based in Brazil with a passion for code.",
     cta: 'See My Work',
   },
+  experience: {
+    title: 'Experience & Education',
+    badge: '💼 My Career Path',
+    highlights: 'Highlights',
+    takeaway: 'Takeaway',
+  },
 };
 
 export type Dictionary = typeof en;
