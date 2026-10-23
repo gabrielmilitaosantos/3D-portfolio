@@ -6,7 +6,7 @@ interface PropsTitleHeader {
 
 const TitleHeader = ({ title, badge, className }: PropsTitleHeader) => {
   return (
-    <div className={`${className ?? ''} flex flex-col items-center gap-5"`}>
+    <div className={`${className ?? ''} flex flex-col items-center gap-5`}>
       <div className="hero-badge">
         <p>{badge}</p>
       </div>
