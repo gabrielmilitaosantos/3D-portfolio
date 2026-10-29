@@ -14,4 +14,10 @@ export const pt = {
     highlights: 'Destaques',
     takeaway: 'Aprendizado',
   },
+  skills: {
+    badge: '🤝 Como Posso Contribuir',
+    title: 'Principais Habilidades',
+    toolsBadge: '🧰 Ferramentas',
+    toolsTitle: 'Tecnologias com que Trabalho',
+  },
 } satisfies typeof en;
