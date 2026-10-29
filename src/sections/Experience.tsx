@@ -9,8 +9,7 @@ import { useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// TODO: Can change the percentage after build the next session. (Suggest 60%)
-const REVEAL_START = 'top 80%';
+const REVEAL_START = 'top 60%';
 
 const Experience = () => {
   const { t, language } = useTranslation();
@@ -68,9 +67,9 @@ const Experience = () => {
             ease: 'none',
             scrollTrigger: {
               trigger: list,
-              start: 'top 75%',
+              start: REVEAL_START,
               endTrigger: lastLogo,
-              end: 'clamp(center 45%)', // TODO: remove the clamp for the next section
+              end: 'center 45%',
               scrub: true, // Links progress to scroll
             },
           });

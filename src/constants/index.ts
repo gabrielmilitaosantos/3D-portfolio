@@ -1,3 +1,25 @@
+import {
+  siReact,
+  siNodedotjs,
+  siPostgresql,
+  siJsonwebtokens,
+  siDocker,
+  siJavascript,
+  siTypescript,
+  siHtml5,
+  siNextdotjs,
+  siTailwindcss,
+  siExpress,
+  siNestjs,
+  siMongodb,
+  siPrisma,
+  siDrizzle,
+  siGithubactions,
+  siJest,
+  siGit,
+  siVercel,
+} from 'simple-icons';
+
 export const words = [
   {
     id: 'ideas',
@@ -58,7 +80,7 @@ export const counterItems = [
     id: 'languages',
     value: 3,
     suffix: '',
-    label: { pt: 'Idiomas Falados', en: 'Languages Spoken' },
+    label: { pt: 'Idiomas', en: 'Languages' },
   },
 ];
 
@@ -277,10 +299,77 @@ export const expCards = [
     takeaway: {
       pt:
         'Conciliei estudo e trabalho como desenvolvedor por mais de dois anos ' +
-        'e conclui a graduação com um projeto de cunho social.',
+        'e concluí a graduação com um projeto de cunho social.',
       en:
         'I balanced study and a developer job for over two years and finished ' +
         'my degree with a socially focused project.',
     },
+  },
+];
+
+export const skillCards = [
+  {
+    id: 'frontend',
+    title: { pt: 'Frontend', en: 'Frontend' },
+    icon: siReact,
+  },
+  {
+    id: 'backend',
+    title: { pt: 'Backend', en: 'Backend' },
+    icon: siNodedotjs,
+  },
+  {
+    id: 'database',
+    title: { pt: 'Banco de Dados', en: 'Databases' },
+    icon: siPostgresql,
+  },
+  {
+    id: 'security',
+    title: { pt: 'Segurança', en: 'Security' },
+    icon: siJsonwebtokens,
+  },
+  {
+    id: 'devops',
+    title: { pt: 'DevOps', en: 'DevOps' },
+    icon: siDocker,
+  },
+];
+
+export const techRows = [
+  {
+    id: 'languages-frameworks',
+    label: {
+      pt: 'Linguagens e frameworks',
+      en: 'Languages and frameworks',
+    },
+    items: [
+      siTypescript,
+      siJavascript,
+      siReact,
+      siHtml5,
+      siNextdotjs,
+      siTailwindcss,
+      siNodedotjs,
+      siExpress,
+      siNestjs,
+    ],
+  },
+  {
+    id: 'data-infra-quality',
+    label: {
+      pt: 'Dados, infraestrutura e qualidade',
+      en: 'Data, infrastructure and quality',
+    },
+    items: [
+      siPostgresql,
+      siMongodb,
+      siPrisma,
+      siDrizzle,
+      siDocker,
+      siGithubactions,
+      siJest,
+      siGit,
+      siVercel,
+    ],
   },
 ];

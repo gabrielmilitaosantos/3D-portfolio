@@ -13,6 +13,12 @@ export const en = {
     highlights: 'Highlights',
     takeaway: 'Takeaway',
   },
+  skills: {
+    badge: '🤝 How I Can Contribute',
+    title: 'Key Skills',
+    toolsBadge: '🧰 Toolbox',
+    toolsTitle: 'Technologies I Work With',
+  },
 };
 
 export type Dictionary = typeof en;
