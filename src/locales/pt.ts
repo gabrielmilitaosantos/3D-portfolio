@@ -20,4 +20,20 @@ export const pt = {
     toolsBadge: '🧰 Ferramentas',
     toolsTitle: 'Tecnologias com que Trabalho',
   },
+  contact: {
+    badge: '💬 Tem uma oportunidade ou uma ideia?',
+    title: 'Vamos Conversar',
+    name: { label: 'Seu nome', placeholder: 'Como você se chama?' },
+    email: { label: 'Seu e-mail', placeholder: 'Qual é o seu e-mail?' },
+    message: { label: 'Sua mensagem', placeholder: 'Como posso ajudar?' },
+    send: 'Enviar mensagem',
+    sending: 'Enviando...',
+    success: 'Mensagem enviada! Responderei em breve.',
+    error: 'Não foi possível enviar. Tente novamente em instantes',
+    invalid: {
+      name: 'Informe seu nome',
+      email: 'Informe um e-mail válido.',
+      message: 'Escreva uma mensagem.',
+    },
+  },
 } satisfies typeof en;

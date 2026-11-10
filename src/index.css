@@ -13,6 +13,7 @@ body {
   color: white;
   scroll-behavior: smooth;
   font-family: 'Mona Sans', sans-serif;
+  scroll-padding-top: 5.5rem;
 }
 
 section {
@@ -277,7 +278,7 @@ section {
     @apply border border-black-50 bg-black-100;
   }
 
-/*
+  /*
   .timeline-wrapper
   On xl, `left` comes from the layout, not from the viewport width:
     left = 100% / 3 + (2/3 × gap) + (logo / 2) - (line width / 2)
@@ -297,7 +298,7 @@ section {
     @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black;
   }
 
-/* md:size-24 is used in the .timeline-wrapper formula */
+  /* md:size-24 is used in the .timeline-wrapper formula */
   .timeline-logo {
     @apply md:size-24 size-12 flex-none rounded-full flex justify-center items-center
       md:-translate-y-7 border border-black-50 bg-black-100;
@@ -306,7 +307,7 @@ section {
     }
   }
 
-/* xl:gap-20 is used in the .timeline-wrapper formula */
+  /* xl:gap-20 is used in the .timeline-wrapper formula */
   .exp-card-wrapper {
     @apply flex flex-col-reverse xl:flex-row xl:gap-20 gap-10 justify-between;
   }
@@ -323,16 +324,17 @@ section {
 
     /* 3 + 2 layout on md: centers the last row */
     &:nth-child(4) {
-      @apply md:col-start-2 xl:col-start-auto
+      @apply md:col-start-2 xl:col-start-auto;
     }
 
     /* Fill from the bottom, tinted with the brand color (--accent) */
     &::before {
-      content: "";
+      content: '';
       @apply absolute inset-0 origin-bottom;
       background: linear-gradient(
         to top,
-        color-mix(in srgb, var(--accent) 22%, transparent), transparent 75%
+        color-mix(in srgb, var(--accent) 22%, transparent),
+        transparent 75%
       );
       transform: scaleY(0);
       transition: transform 700ms ease-out;
@@ -374,7 +376,7 @@ section {
     }
   }
 
-  @media (prefers-reduced-motion: reduce) and (hover:hover) and (pointer:fine) {
+  @media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
     .skill-card:hover::before {
       opacity: 1;
     }

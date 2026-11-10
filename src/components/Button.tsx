@@ -15,7 +15,8 @@ const Button = ({ className, id, text }: PropsButton) => {
         if (target && id) {
           const offset = window.innerHeight * 0.15;
 
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          const top =
+            target.getBoundingClientRect().top + window.scrollY - offset;
 
           window.scrollTo({ top, behavior: 'smooth' });
         }
