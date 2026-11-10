@@ -75,7 +75,9 @@ export function Room(props: ThreeElements['group']) {
   const pillowMaterial = new THREE.MeshPhongMaterial({ color: '#8338ec' });
 
   const radiatorMaterial = new THREE.MeshPhongMaterial({ color: '#fff' });
-  const radiatorGeometryMaterial = new THREE.MeshPhongMaterial({ color: '#505050' });
+  const radiatorGeometryMaterial = new THREE.MeshPhongMaterial({
+    color: '#505050',
+  });
 
   const railingMaterial = new THREE.MeshPhongMaterial({ color: '#333331' });
 
@@ -86,7 +88,6 @@ export function Room(props: ThreeElements['group']) {
   const windowMaterial = new THREE.MeshPhongMaterial({ color: '#777777' });
 
   const windowGlassMaterial = new THREE.MeshPhongMaterial({ color: '#1f3571' });
-
 
   return (
     <group {...props} dispose={null}>
@@ -207,10 +208,7 @@ export function Room(props: ThreeElements['group']) {
         geometry={nodes.vacuumgrey_blinn1_0.geometry}
         material={vacuumMaterial}
       />
-      <mesh
-        geometry={nodes.vires_blinn1_0.geometry}
-        material={nodesMaterial}
-      />
+      <mesh geometry={nodes.vires_blinn1_0.geometry} material={nodesMaterial} />
       <mesh
         geometry={nodes.window_blinn1_0.geometry}
         material={windowMaterial}
