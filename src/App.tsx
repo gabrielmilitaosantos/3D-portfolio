@@ -5,6 +5,7 @@ import FeatureCards from './sections/FeatureCards.tsx';
 import Experience from './sections/Experience.tsx';
 import Skills from './sections/Skills.tsx';
 import Contact from './sections/Contact.tsx';
+import Footer from './sections/Footer.tsx';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Experience />
       <Skills />
       <Contact />
+      <Footer />
     </>
   );
 };

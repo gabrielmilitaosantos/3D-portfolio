@@ -49,9 +49,7 @@ const Skills = () => {
             opacity: 0,
             duration: 1,
             ease: 'power2.out',
-            // Last element of the page: its top never reaches 80% of the viewport
-            // TODO: use REVEAL_START on 'start' once the Contact section exists below it.
-            scrollTrigger: { trigger: marquee, start: 'top 95%' },
+            scrollTrigger: { trigger: marquee, start: REVEAL_START },
           });
         }
       });

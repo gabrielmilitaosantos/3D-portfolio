@@ -373,3 +373,18 @@ export const techRows = [
     ],
   },
 ];
+
+export const socialImgs = [
+  {
+    id: 'linkedin',
+    name: 'linkedin',
+    url: 'https://www.linkedin.com/in/gabrielmilitao98/',
+    imgPath: '/images/linkedin.png',
+  },
+  {
+    id: 'github',
+    name: 'github',
+    url: 'https://github.com/gabrielmilitaosantos',
+    imgPath: '/images/github.png',
+  },
+];
