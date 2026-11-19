@@ -12,7 +12,11 @@ type CounterCardProps = {
 const CounterCard = ({ value, suffix, label }: CounterCardProps) => {
   const ref = useRef<HTMLSpanElement>(null!);
 
-  useCountUp({ ref, end: value, suffix, duration: 2 });
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduce-motion: reduce)'
+  ).matches;
+
+  useCountUp({ ref, end: value, suffix, duration: reduceMotion ? 0 : 2 });
 
   return (
     <div className="bg-zinc-900 rounded-lg p-10 flex flex-col justify-center">

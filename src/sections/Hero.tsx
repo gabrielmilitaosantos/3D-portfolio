@@ -27,13 +27,13 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="background" />
+      <div className="absolute top-0 left-0 z-10" aria-hidden="true">
+        <img src="/images/bg.png" alt="" />
       </div>
 
-      <div className="hero-layout">
+      <div className="hero-layout grid-12-cols md:px-20 px-5">
         {/*Left: Hero Content*/}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+        <header className="xl:col-span-6 flex flex-col justify-center">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
@@ -60,21 +60,22 @@ const Hero = () => {
               <h1>{t.hero.titleLine2}</h1>
               <h1>{t.hero.titleLine3}</h1>
             </div>
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              {t.hero.subtitle}
-            </p>
+            <p className="text-white-50 md:text-xl">{t.hero.subtitle}</p>
             <Button
               className="w-fit min-w-60 md:min-w-80 h-12 md:h-16"
-              id="button"
+              href="#work"
               text={t.hero.cta}
             />
           </div>
         </header>
 
         {/*Right: 3D model*/}
-        <figure>
-          <div className="hero-3d-layout">
-            <HeroExperience />
+        <figure className="xl:col-span-6" aria-hidden="true">
+          <div className="hero-3d">
+            {/* absolute inset-0: the canvas fills the box sized by .hero-3d */}
+            <div className="absolute inset-0">
+              <HeroExperience />
+            </div>
           </div>
         </figure>
       </div>
