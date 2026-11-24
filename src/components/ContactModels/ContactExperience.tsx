@@ -6,6 +6,7 @@ import {
   OrbitControls,
 } from '@react-three/drei';
 import { Computer } from './Computer.tsx';
+import { Suspense } from 'react';
 
 const COLORS = {
   warm: '#ffd9b0',
@@ -23,7 +24,7 @@ const ContactExperience = () => {
 
   return (
     <Canvas
-      shadows
+      shadows="percentage"
       dpr={[1, 1.5]}
       frameloop="demand"
       camera={{ position: [0, 3, 7.6], fov: 45 }}
@@ -91,9 +92,11 @@ const ContactExperience = () => {
         maxPolarAngle={Math.PI / 2}
       />
 
-      <group scale={0.03} position={[0, -1.5, -2]}>
-        <Computer />
-      </group>
+      <Suspense fallback={null}>
+        <group scale={0.03} position={[0, -1.5, -2]}>
+          <Computer />
+        </group>
+      </Suspense>
     </Canvas>
   );
 };

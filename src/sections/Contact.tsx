@@ -4,10 +4,11 @@ import {
   type SyntheticEvent,
   type SubmitEvent,
   useState,
+  lazy,
+  Suspense,
 } from 'react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from '../hooks/useTranslation.ts';
-import ContactExperience from '../components/ContactModels/ContactExperience.tsx';
 
 type ContactFormData = {
   name: string;
@@ -53,6 +54,10 @@ const setInvalidMessage =
 const clearInvalidMessage = (e: SyntheticEvent<FieldElement>) => {
   e.currentTarget.setCustomValidity('');
 };
+
+const ContactExperience = lazy(
+  () => import('../components/ContactModels/ContactExperience.tsx')
+);
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -178,9 +183,11 @@ const Contact = () => {
           </div>
 
           {/* 3D Experience - Right side */}
-          <div className="xl:col-span-7">
+          <div className="xl:col-span-7" aria-hidden="true">
             <div className="card-border h-96 md:h-112 xl:h-full xl:min-h-96 rounded-xl overflow-hidden hover:cursor-grab active:cursor-grabbing bg-[radial-gradient(ellipse_at_50%_35%,rgba(109,69,206,0.35),transparent_65%)]">
-              <ContactExperience />
+              <Suspense fallback={null}>
+                <ContactExperience />
+              </Suspense>
             </div>
           </div>
         </div>

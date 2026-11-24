@@ -100,7 +100,7 @@ const Experience = () => {
           <div className="exp-list relative z-50 xl:space-y-32 space-y-10">
             <div className="timeline-wrapper">
               <div className="timeline" />
-              <div className="gradient-line w-1 h-full" />
+              <div className="gradient-line h-full" />
             </div>
 
             {/*Left Column (Takeaways)*/}

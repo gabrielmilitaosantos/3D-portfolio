@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Room } from './Room.tsx';
 import HeroLights from './HeroLights.tsx';
+import { Suspense } from 'react';
 
 const FRAMING_Y = -1.2;
 const ORBIT_TARGET: [number, number, number] = [0, FRAMING_Y, 0];
@@ -21,9 +22,12 @@ const HeroExperience = () => {
       />
 
       <HeroLights />
-      <group position={[0, -3.5, 0]} rotation={[0, -Math.PI / 4, 0]}>
-        <Room />
-      </group>
+
+      <Suspense fallback={null}>
+        <group position={[0, -3.5, 0]} rotation={[0, -Math.PI / 4, 0]}>
+          <Room />
+        </group>
+      </Suspense>
     </Canvas>
   );
 };

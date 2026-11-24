@@ -1,28 +1,43 @@
 import { words } from '../constants';
 import { useTranslation } from '../hooks/useTranslation.ts';
 import Button from '../components/Button.tsx';
-import HeroExperience from '../components/HeroModels/HeroExperience.tsx';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import AnimatedCounter from '../components/AnimatedCounter.tsx';
+import { lazy, Suspense } from 'react';
+
+const HeroExperience = lazy(
+  () => import('../components/HeroModels/HeroExperience.tsx')
+);
 
 const Hero = () => {
   const { t, language } = useTranslation();
+
+  const wordList = new Intl.ListFormat(language === 'pt' ? 'pt-BR' : 'en', {
+    type: 'conjunction',
+  }).format([...new Set(words.map((word) => word.text[language]))]);
+
   useGSAP(() => {
-    void gsap.fromTo(
-      '.hero-text h1',
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 1,
-        ease: 'power2.inOut',
-      }
-    );
+    const mm = gsap.matchMedia();
+
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      void gsap.fromTo(
+        '.hero-text .line',
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 1,
+          ease: 'power2.inOut',
+        }
+      );
+    });
+
+    return () => mm.revert();
   });
 
   return (
@@ -37,28 +52,31 @@ const Hero = () => {
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
-                {t.hero.titleLine1}
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word) => (
-                      <span
-                        key={word.id}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt={word.text[language]}
-                          className="xl:size-12 md:size-10 size-7 md:pb-2 p-1 rounded-full bg-white-50"
-                        />
+                <span className="line">
+                  {t.hero.titleLine1}{' '}
+                  <span className="sr-only">{wordList}</span>
+                  <span className="slide" aria-hidden="true">
+                    <span className="wrapper">
+                      {words.map((word) => (
+                        <span
+                          key={word.id}
+                          className="flex items-center md:gap-3 gap-1 pb-2"
+                        >
+                          <img
+                            src={word.imgPath}
+                            alt=""
+                            className="xl:size-12 md:size-10 size-7 md:pb-2 p-1 rounded-full bg-white-50"
+                          />
 
-                        <span>{word.text[language]}</span>
-                      </span>
-                    ))}
+                          <span>{word.text[language]}</span>
+                        </span>
+                      ))}
+                    </span>
                   </span>
                 </span>
+                <span className="line">{t.hero.titleLine2}</span>
+                <span className="line">{t.hero.titleLine3}</span>
               </h1>
-              <h1>{t.hero.titleLine2}</h1>
-              <h1>{t.hero.titleLine3}</h1>
             </div>
             <p className="text-white-50 md:text-xl">{t.hero.subtitle}</p>
             <Button
@@ -74,7 +92,9 @@ const Hero = () => {
           <div className="hero-3d">
             {/* absolute inset-0: the canvas fills the box sized by .hero-3d */}
             <div className="absolute inset-0">
-              <HeroExperience />
+              <Suspense fallback={null}>
+                <HeroExperience />
+              </Suspense>
             </div>
           </div>
         </figure>
